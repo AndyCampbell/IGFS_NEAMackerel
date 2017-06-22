@@ -16,16 +16,16 @@ library(foreach, quietly = TRUE)
 library(data.table, quietly = TRUE)
 library(stringr)
 library(dplyr)
+library(lubridate)
 
 source(".\\Source\\Functions.R")
 
-rawdata.dir = file.path(getwd(),"\\","RawData")
-
+rawdata.dir = file.path(getwd(),"RawData")
+savedata.dir = file.path(getwd(),"RData")
 
 #read in the data (or read from previous save if refresh = FALSE)
 
-dfMac <- fRefreshData(rawdata.dir,
-                      savedata.dir = Rdata.path,
+dfMac <- fRefreshData(rawdata.dir, savedata.dir,
                       surveys = c("IE-IGFS"),
-                      startyear=2003, endyear=2016,
+                      startyear=2009, endyear=2009,
                       refresh = TRUE)
