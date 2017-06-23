@@ -27,5 +27,7 @@ savedata.dir = file.path(getwd(),"RData")
 
 dfMac <- fRefreshData(rawdata.dir, savedata.dir,
                       surveys = c("IE-IGFS"),
-                      startyear=2009, endyear=2009,
+                      startyear=2015, endyear=2015,
                       refresh = TRUE)
+
+write.csv(dfMac, file="IGFS_Mac_2015.dat",quote=FALSE,row.names=FALSE)
